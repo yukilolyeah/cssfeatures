@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend features</title>
+</head>
+
+<body>
+    <section class="card-container">
+        <div class="card flip">
+            <div class="front"></div>
+            <div class="back">
+                <h1 class="title">Айташ</h1>
+                <p class="desc">
+                    Этот пёсель был из тех, кто просто любит жизнь. Любит лаять он и громкий смех, вкус игрушек и носков.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="fade-btn">
+
+        <div class="btn"><a href="https://yandex.ru/">Click Me</a></div>
+
+    </section>
+    <section class="wave-text">
+        <h1 class="wave">Привет. Наведи на меня курсор и я сделаю волну.</h1>
+    </section>
+    <script>
+        const card = document.querySelector('.card');
+        card.onclick = function() {
+            card.classList.toggle('flip');
+        }
+
+        const text = document.querySelector('.wave')
+        text.innerHTML = text.textContent.split('').map((e, i) =>
+            `<span style="animation-delay: ${i * 20}ms; white-space: pre-wrap;">${e}</span>`
+
+        ).join('')
+    </script>
+</body>
+
+</html>
